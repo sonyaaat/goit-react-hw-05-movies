@@ -1,7 +1,7 @@
 import { Suspense, useEffect, useState } from 'react';
 import { useLocation, useParams } from 'react-router-dom';
 import { findDetails } from '../../api';
-import { Link, Outlet } from 'react-router-dom';
+import { Link, Outlet ,NavLink} from 'react-router-dom';
 import Loader from 'components/Loader/Loader';
 import css from '../MovieDetails/MovieDetails.module.css';
 import img from '../../default.png';
@@ -52,8 +52,8 @@ const MovieDetails = () => {
       </div>
       <div>
         <h2>Additional Information</h2>
-        <Link className={css.link} to={'cast'}>Cast</Link>
-        <Link className={css.link} to={'reviews'}>Reviews</Link>
+        <NavLink className={({isActive})=>!isActive?css.link:css.link__active} to={'cast'}>Cast</NavLink>
+        <NavLink className={({isActive})=>!isActive?css.link:css.link__active} to={'reviews'}>Reviews</NavLink>
       </div>
       <Suspense fallback={<Loader />}>
         <Outlet />

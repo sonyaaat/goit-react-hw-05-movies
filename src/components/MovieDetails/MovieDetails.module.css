@@ -33,10 +33,14 @@ margin-right: 50px;
     text-decoration: none;
     color: black;
 }
-.link:not(:last-child)
+.link:not(:last-child),
+.link__active:not(:last-child)
 {
     margin-right: 10px;
 }
 .link:hover{
+    color: blue;
+}
+.link__active{
     color: blue;
 }

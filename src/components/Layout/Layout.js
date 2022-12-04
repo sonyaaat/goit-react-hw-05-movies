@@ -6,9 +6,13 @@ const Layout = () => {
   return (
     <>
       <header className={css.header}>
-        <nav>
-          <NavLink className={css.header__link} to="home">Home</NavLink>
-          <NavLink className={css.header__link} to="movies">Movies</NavLink>
+      <nav>
+          <NavLink         className={({ isActive }) =>
+              isActive ? css.active : css.header__link
+            } to="home" end>Home</NavLink>
+          <NavLink         className={({ isActive }) =>
+              isActive ? css.active : css.header__link
+            } to="movies">Movies</NavLink>
         </nav>
       </header>
       <Suspense fallback={<Loader />}>
