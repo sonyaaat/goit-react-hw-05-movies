@@ -1,0 +1,26 @@
+.header{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 0;
+    margin-bottom: 16px;
+    border-bottom: 1px solid light-gray;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px ;
+}
+.active 
+{
+    color: #ff1493;
+}
+.header__link{
+    padding: 8px 16px;
+  border-radius: 4px;
+  text-decoration: none;
+  color: black;
+  font-weight: 900;
+  font-size: 20px;
+}
+
+  .header__link:hover:not(.active),
+  .header__link:focus:not(.active) {
+    text-decoration: underline #ff1493;
+  }

@@ -1,0 +1,12 @@
+.link{
+    text-decoration: none;
+    color: black;
+    display: block;
+}
+.link:hover{
+    color: blue;
+}
+.link:not(:last-child)
+{
+    margin-bottom: 5px;
+}
