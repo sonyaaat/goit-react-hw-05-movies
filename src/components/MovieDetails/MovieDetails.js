@@ -52,8 +52,8 @@ const MovieDetails = () => {
       </div>
       <div>
         <h2>Additional Information</h2>
-        <NavLink className={({isActive})=>!isActive?css.link:css.link__active} to={'cast'}>Cast</NavLink>
-        <NavLink className={({isActive})=>!isActive?css.link:css.link__active} to={'reviews'}>Reviews</NavLink>
+        <NavLink className={({isActive})=>!isActive?css.link:css.link__active} to={'cast'} state={{ from: backLink }}>Cast</NavLink>
+        <NavLink className={({isActive})=>!isActive?css.link:css.link__active} to={'reviews'} state={{ from: backLink }}>Reviews</NavLink>
       </div>
       <Suspense fallback={<Loader />}>
         <Outlet />

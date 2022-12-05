@@ -21,28 +21,32 @@ const Cast = () => {
   return (
     <>
       {isLoading && <Loader />}
-      <ul>
-        {cast.map(({ id, original_name, profile_path, character }) => {
-          return (
-            <li key={id}>
-              <img
-              width={200}
-              height={300}
-                src={
-                  profile_path
-                    ? `https://image.tmdb.org/t/p/w200/${profile_path}`
-                    : img
-                }
-                alt={original_name}
-              />
-              <p>
-                <b>{original_name}</b>
-              </p>
-              <p>Character: {character}</p>
-            </li>
-          );
-        })}
-      </ul>
+      {cast.length > 0 ? (
+        <ul>
+          {cast.map(({ id, original_name, profile_path, character }) => {
+            return (
+              <li key={id}>
+                <img
+                  width={200}
+                  height={300}
+                  src={
+                    profile_path
+                      ? `https://image.tmdb.org/t/p/w200/${profile_path}`
+                      : img
+                  }
+                  alt={original_name}
+                />
+                <p>
+                  <b>{original_name}</b>
+                </p>
+                <p>Character: {character}</p>
+              </li>
+            );
+          })}
+        </ul>
+      ) : (
+        <p>We don`t have any information about cast</p>
+      )}
     </>
   );
 };
